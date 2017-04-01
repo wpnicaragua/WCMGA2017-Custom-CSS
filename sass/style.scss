@@ -7,13 +7,16 @@
 // Global.
 @import "variables";
 @import "mixins";
+@import "reset";
+@import "normalize";
 @import "global";
 @import "header";
+@import "navigation";
 @import "footer";
 @import "forms";
 
 // Templates/Pages.
-// @import "./pages/homepage";
+@import "./pages/homepage";
 
 // Templates/Single Pages.
 // @import "./pages/single";

@@ -13,17 +13,17 @@ $main-color:					#009fa3;
 $light-main-color:				#97f0f2;
 $dark-main-color:				#007e81;
 $second-color:					#d44120;
-$light-second-color:			#e56a52;
+$light-second-color:			#ffb6a7;
 $dark-second-color:				#a02708;
 $third-color:					#1b6999;
 
 // Default text.
 $default-text:                  #8b8b8b;
-$link-text:                     $light-second-color;
-$link-text-hover:               $dark-second-color;
+$link-text:                     $second-color;
+$link-text-hover:               $main-color;
 
 // Media query breakpoints.
-$breakpoint:					992px;
+$breakpoint:					616px;
 $tablet-landscape:				1024px;
 $tablet-portrait:				768px;
 $mobile:						480px;
@@ -32,4 +32,4 @@ $large-desktop:					1600px;
 
 // Fonts.
 $font-default: 					'Open sans', sans-serif;
-$font-heading: 					'Oswald', sans-serif;
+$font-heading: 					'Montserrat', sans-serif;
