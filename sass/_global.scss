@@ -122,15 +122,19 @@ hr { border-top: 1px solid rgba($border-gray, 0.25); }
 		background-color: $main-color;
 	}
 
-	&.gray {
-		color: $gray;
-		background-color: $light-gray;
+	&.reverse {
+		padding: 10px 15px;;
+		color: $second-color;
+		background-color: transparent;
+		border: 1px solid $second-color;
+		@include rounded(3px);
 		 
 		&:hover,
 		&:focus,
 		&:active {
 			color: $white;
-			background-color: darken($light-gray, 8%);
+			background-color: $second-color;
+			border: none;
 		}
 	}
 }
