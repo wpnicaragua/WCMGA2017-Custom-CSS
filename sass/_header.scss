@@ -4,7 +4,7 @@
  *
 ***************************************************************************************************/
 $header-height: 43vw;
-$header-min-height: 400px;
+$header-min-height: 600px;
 
 header {
 	position: relative;
@@ -69,13 +69,24 @@ header {
 	position: relative;
 
 	.registration-button {
-
 		position: absolute;
-		top: -8vw;
+		top: -150px;
 		@include centered-x;
 	}
 }
 
 @media only screen and (max-width: $breakpoint) {
 
+	$header-height: 350px;
+	$header-min-height: auto;
+
+	.site-header {
+		height: $header-height;
+		min-height: $header-min-height;
+
+		&:before {
+			height: $header-height;
+			min-height: $header-min-height;
+		}
+	}
 }

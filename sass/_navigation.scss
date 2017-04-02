@@ -4,6 +4,10 @@
  *
 ***************************************************************************************************/
 .site-navigation {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
 	background-color: $second-color;
 	z-index: 1050;
 
@@ -13,19 +17,22 @@
 		@extend .container;
 	}
 
+	ul {
+		margin: 0;
+		padding: 0;
+	    list-style-type: none;
+
+		li { margin: 0; }
+	}
+
 	#menu-wordcamp {
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
 		align-content: center;
-		margin: 0;
-		padding: 0;
-	    list-style-type: none;
 
 		> .menu-item {
-			margin: 0;
-
 
 			a {
 				color: $white;
@@ -86,4 +93,10 @@
 
 @media only screen and (max-width: $breakpoint) {
 	
+	.site-navigation {
+
+		.menu-toggle {
+			color: $white;
+		}
+	}
 }
