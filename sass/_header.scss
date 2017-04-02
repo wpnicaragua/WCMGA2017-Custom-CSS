@@ -8,7 +8,6 @@ $header-min-height: 600px;
 
 header {
 	position: relative;
-	overflow: hidden;
 	width: 100%;
 	height: $header-height;
 	min-height: $header-min-height;
@@ -34,7 +33,7 @@ header {
 		display: inline-block;
 		text-align: center;
 		@include centered-xy;
-		top: 40%;
+		top: 42%;
 	}
 
 	.site-title {
@@ -43,9 +42,9 @@ header {
 		a {
 			display: block;
 			max-width: 324px;
-			min-width: 220px;
+			min-width: 150px;
 			max-height: 324px;
-			min-height: 220px;
+			min-height: 150px;
 			width: 25vw;
 			height: 25vw;
 			margin: 0 auto;
@@ -77,16 +76,25 @@ header {
 
 @media only screen and (max-width: $breakpoint) {
 
-	$header-height: 350px;
-	$header-min-height: auto;
+	header {
+		
+		$header-height: 350px;
+		$header-min-height: auto;
 
-	.site-header {
 		height: $header-height;
 		min-height: $header-min-height;
 
 		&:before {
 			height: $header-height;
 			min-height: $header-min-height;
+			background-position: center left 20%;
 		}
+
+		.site-description { @include font-size(1.6); }
+	}
+
+	.widget-area.front-page {
+
+		.registration-button { top: -80px; }
 	}
 }
