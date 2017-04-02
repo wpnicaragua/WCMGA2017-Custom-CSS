@@ -101,7 +101,7 @@
 			visibility: hidden;
 
 			&:after {
-				content: '\f00d';
+				content: '\f0c9';
 				font-family: 'fontawesome';
 				visibility: visible;
 				position: absolute;
@@ -112,15 +112,15 @@
 				color: $white;
 				background-color: rgba($white, 0.2);
 				z-index: 1050;
-				@include rounded(50%);
+				@include rounded(3px);
 				@include transition;
 			}
 
 			&.toggled-on {
 
 				&:after {
-					content: '\f0c9';
-					@include rounded(3px);
+					content: '\f00d';
+					@include rounded(50%);
 				}
 			}
 		}
@@ -132,6 +132,7 @@
 			left: 0;
 
 			#menu-wordcamp {
+				display: none;
 				background-color: $second-color;
 				padding-top: 50px;
 				flex-direction: column;
