@@ -14,9 +14,10 @@
 		align-content: space-around;
 		background-image: 	url("https://2017.managua.wordcamp.org/files/2017/04/before-content-bkg-left.png"),
 							url("https://2017.managua.wordcamp.org/files/2017/04/before-content-bkg-right.png");
-		background-repeat:  no-repeat, no-repeat;
+		background-repeat:  repeat-y, repeat-y;
 		background-position: left 0 top 0px, left 100% top 0px;
-		background-size: contain,contain;
+		background-size: 310px, 310px;
+		background-attachment: fixed, fixed;
 		
 		&:before {
 			content: '';
