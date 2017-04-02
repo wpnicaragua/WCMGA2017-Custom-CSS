@@ -31,6 +31,7 @@
 		justify-content: center;
 		align-items: center;
 		align-content: center;
+		@include transition;
 
 		> .menu-item {
 
@@ -65,7 +66,7 @@
 						display: flex;
 						flex-direction: column;
 						align-items: stretch;
-						flex-wrap: wrap;
+						flex-wrap: nowrap;
 						position: absolute;
 						background-color: $main-color;
 						@include box-shadow;
@@ -94,9 +95,69 @@
 @media only screen and (max-width: $breakpoint) {
 	
 	.site-navigation {
+		background-color: transparent;
 
 		.menu-toggle {
-			color: $white;
+			visibility: hidden;
+
+			&:after {
+				content: '\f00d';
+				font-family: 'fontawesome';
+				visibility: visible;
+				position: absolute;
+				top: 15px;
+				right: 15px;
+				display: inline-block;
+				padding: 5px 10px;
+				color: $white;
+				background-color: rgba($white, 0.2);
+				z-index: 1050;
+				@include rounded(50%);
+				@include transition;
+			}
+
+			&.toggled-on {
+
+				&:after {
+					content: '\f0c9';
+					@include rounded(3px);
+				}
+			}
+		}
+
+		.menu-wordcamp-container {
+			width: 100%;
+			position:  absolute;
+			top: 0;
+			left: 0;
+
+			#menu-wordcamp {
+				background-color: $second-color;
+				padding-top: 50px;
+				flex-direction: column;
+				align-items: stretch;
+
+				> .menu-item {
+
+					a { 
+						width:  100%;
+						padding: 10px 15px; 
+					}
+
+					> .sub-menu {
+						position:  relative !important;
+						width:  100%;
+						display: block !important;
+						background-color: transparent !important;					
+
+						> .menu-item {
+							width:  100%;
+							
+							a { padding: 8px 10px 8px 50px; }
+						}
+					}
+				}
+			}
 		}
 	}
 }
