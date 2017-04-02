@@ -16,7 +16,7 @@ body {
 	font-family: $font-default;
 	color: $default-text;
 	font-weight: 300;
-	@include font-size(1.5);
+	@include font-size(1.6);
 }
 
 .desktop { display: block; }
