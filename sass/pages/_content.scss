@@ -3,13 +3,15 @@
  *  @Section: Content
  *
 ***************************************************************************************************/
-.site-content {
-	position:  relative;
-	padding: 100px 0;
-	color:  $white;
+#primary {
+	position: relative;
+	padding: 80px 0 20px;
+	width: 100%;
+	min-height: 500px;
+	color: $white;
 	background-color: $main-color;
 	z-index: 1000;
-	float: left;
+	
 
 	&:before,
 	&:after {
@@ -31,9 +33,32 @@
 		top: 100%;
 	}
 
+	a {
+		text-decoration: none;
+		display: inline-block;
+		color: $dark-main-color;
+		@include transition;
+
+		&:hover,
+		&:focus,
+		&:active {
+			text-decoration: none;
+			color: $light-main-color;
+
+			.thumb { outline: 1px solid $white; }
+		}
+	}
+
 	#content {
-		padding-right: 300px;
+		padding-right: 30vw;
 		@extend .container;
+
+		article { margin-bottom: 50px;
+			
+			.entry-content {
+				padding: 20px 0;
+			}
+		}
 	}
 
 }
@@ -41,7 +66,86 @@
 #secondary {
 	position: absolute;
 	top: 0;
+	right: 12.5%;
+	width: 25vw;
+	min-width: 250px;
+	height: 1px;
+	color: $white;
 	z-index: 1050;
+
+	#primary-sidebar {
+		padding: 70px 15px;
+
+		.widget-title {
+			padding-bottom: 25px;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			font-weight: 700;
+			@include font-size(1.6);
+
+			&:after {
+				content: '';
+				position: absolute;
+				display: block;
+				margin-top: 15px;
+				width: 40px;
+				height: 1px;
+				background-color: $white;
+			}
+		}
+	}
+
+	.social-icons {
+		margin: 0;
+		padding: 0;
+	    list-style-type: none;
+
+		> li { margin: 0;
+
+			a {
+				color: $dark-main-color;
+				background-color: transparent;
+				border: $dark-main-color 2px solid;
+				@include rounded(40px);
+				@include font-size(2);
+
+				.fa { margin-left: -2px; }
+
+				.social-text { display: none; }
+
+				&:hover,
+				&:focus,
+				&:active {
+					color: $light-main-color;
+					border-color: $light-main-color;
+				} 
+			}
+		}
+	}
+}
+
+.widget-area.front-page + .site-content > #content {
+	
+	&:before {
+		content: 'Últimos Posts';
+		display: inline-block;
+		margin-bottom: 18px;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		font-weight: 700;
+		@include font-size(2);
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		display: block;
+		margin-top: 120px;
+		width: 40px;
+		height: 1px;
+		background-color: $white;
+	}
 }
 
 @media only screen and (max-width: $breakpoint) {

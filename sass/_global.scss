@@ -25,7 +25,6 @@ body {
 
 .container {
     width: 75%;
-    max-width: 1170px;
     margin: 0 auto;
 }
 
@@ -182,7 +181,14 @@ hr { border-top: 1px solid rgba($border-gray, 0.25); }
 
 #main {
 	position: relative;
+	display: block;
+	min-height: 500px;
 	background-color: $white;
+
+	&:before, 
+	&:after { @include clearfix; }
+
+	&:after { @include clearfix-after; }
 }
 
 .error-404 {
