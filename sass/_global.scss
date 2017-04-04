@@ -179,18 +179,6 @@ hr { border-top: 1px solid rgba($border-gray, 0.25); }
 	}
 }
 
-#main {
-	position: relative;
-	display: block;
-	min-height: 500px;
-	background-color: $white;
-
-	&:before, 
-	&:after { @include clearfix; }
-
-	&:after { @include clearfix-after; }
-}
-
 .error-404 {
 	margin-top: 200px;
 	text-align: center;
