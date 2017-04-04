@@ -2,6 +2,7 @@
 .sass-cache
 .DS_Store
 node_modules
+style.min.css
 
 ### WordPress ###
 *.log

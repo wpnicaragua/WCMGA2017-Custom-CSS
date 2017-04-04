@@ -166,15 +166,14 @@
 						display: block !important;
 						background-color: transparent !important;
 
-						> .menu-item {
-							width:  100%;
+						> .menu-item { width:  100%;
 
 							a { padding: 8px 10px 8px 50px; }
 						}
 					}
 
-					&.get-tickets > a {
-						width: 100%
+					&.get-tickets > a { width: 100%;
+
 						&:before { display: none; }
 					}
 				}
