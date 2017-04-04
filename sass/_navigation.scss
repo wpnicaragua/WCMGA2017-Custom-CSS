@@ -37,7 +37,7 @@
 
 			a {
 				color: $white;
-				padding: 15px;
+				padding: 20px 15px;
 				text-transform: uppercase;
 				font-family: $font-heading;
 				@include font-size(1.2);
@@ -50,19 +50,19 @@
 				}
 			}
 
-			> .sub-menu { 
+			> .sub-menu {
 				display: none;
 				@include transition;
 			}
 
 			&.menu-item-has-children {
-				
+
 
 				&:hover,
 				&:focus,
 				&:active {
-					
-					> .sub-menu { 
+
+					> .sub-menu {
 						display: flex;
 						flex-direction: column;
 						align-items: stretch;
@@ -71,12 +71,12 @@
 						background-color: $main-color;
 						@include box-shadow;
 
-						.menu-item { 
+						.menu-item {
 							display: inline-block;
 							flex-grow: 1;
 						}
 
-						a { width: 100%; 
+						a { width: 100%;
 
 							&:hover,
 							&:focus,
@@ -85,7 +85,21 @@
 								background-color: $dark-main-color;
 							}
 						}
-					}				
+					}
+				}
+			}
+
+			&.get-tickets > a {
+				position: relative;
+				width: 82px;
+				&:before {
+					display: block;
+				    content: url(https://2017.managua.wordcamp.org/files/2017/04/tickets-here.png);
+				    position: absolute;
+				    top: 0;
+				    left: 0;
+				    width: 82px;
+				    height: 72px;
 				}
 			}
 		}
@@ -93,7 +107,7 @@
 }
 
 @media only screen and (max-width: $breakpoint) {
-	
+
 	.site-navigation {
 		position: absolute;
 		background-color: transparent;
@@ -141,22 +155,27 @@
 
 				> .menu-item {
 
-					a { 
+					a {
 						width:  100%;
-						padding: 10px 15px; 
+						padding: 10px 15px;
 					}
 
 					> .sub-menu {
 						position:  relative !important;
 						width:  100%;
 						display: block !important;
-						background-color: transparent !important;					
+						background-color: transparent !important;
 
 						> .menu-item {
 							width:  100%;
-							
+
 							a { padding: 8px 10px 8px 50px; }
 						}
+					}
+
+					&.get-tickets > a {
+						width: 100%
+						&:before { display: none; }
 					}
 				}
 			}
