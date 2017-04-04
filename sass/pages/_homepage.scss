@@ -19,7 +19,7 @@
 		background-size: 310px, 310px;
 		background-attachment: fixed, fixed;
 		background-color: $white;
-		
+
 		&:before {
 			content: '';
 			position: absolute;
@@ -44,7 +44,7 @@
 
 			i { @include font-size(5); }
 
-			h2 { 
+			h2 {
 				color: $third-color;
 				text-transform: uppercase;
 				font-weight: bold;
@@ -70,5 +70,5 @@
 			background-image: none;
 		}
 	}
-		
+
 }
