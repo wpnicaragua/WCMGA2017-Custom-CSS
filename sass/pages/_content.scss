@@ -47,12 +47,9 @@
 
 		article { margin-bottom: 50px;
 			
-			.entry-content {
-				padding: 20px 0;
-			}
+			.entry-content { padding: 20px 0; }
 		}
 	}
-
 }
 
 #secondary {
@@ -109,16 +106,16 @@
 	z-index: 1000;
 
 	a {
-		text-decoration: none;
 		display: inline-block;
-		color: $dark-main-color;
+		color: $light-main-color;
+		text-decoration: underline;
 		@include transition;
 
 		&:hover,
 		&:focus,
 		&:active {
-			text-decoration: none;
-			color: $light-main-color;
+			text-decoration: underline;
+			color: $white;
 
 			.thumb { outline: 1px solid $white; }
 		}
@@ -146,6 +143,25 @@
 		width: 40px;
 		height: 1px;
 		background-color: $white;
+	}
+}
+
+.wcorg-organizers {
+
+	.avatar {
+		width: auto;
+		float: left;
+		margin-right: 10px;
+		margin-bottom: 10px;
+		@extend .thumb;
+	}
+	
+	.wcorg-organizer-description {
+		
+		&:before, 
+		&:after { @include clearfix; }
+
+		&:after { @include clearfix-after; }
 	}
 }
 
