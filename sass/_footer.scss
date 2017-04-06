@@ -7,42 +7,133 @@
 	position: relative;
 	display:  block;
 	width: 100%;
-	padding: 80px 0 20px;
 	background-color: $white;
 
 	#footer-widgets {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		justify-content: space-between;
-		@extend .container;
+		justify-content: space-around;
 
 		.footer-widgets-block {
+			padding: 80px 0 20px;
 			
-			&:first-child {  
+			&:first-child { 
+				position: relative;
 				flex-basis: auto;
 				width: 100%;
+				background-color: $light-gray;
+				padding: 80px 12.5% 20px;
 
-				h1 { 
+				h1 {
 					color: $third-color;
 					text-transform: uppercase;
 					font-weight: bold;
 					text-align: center;
 				}
+
+				&:after {
+					content: '';
+					position: absolute;
+					top: 100%;
+					left: 0;
+					display: block;
+					width: 100%;
+					height: 70px;
+					background-color: $light-gray;
+					-webkit-transform-origin: 0 0;
+					transform-origin: 0 0;
+					z-index: 1000;
+					@include transform(skewY(-1.5deg));
+				}
 			}
 
-			.widget-title {
+			.widget-title,
+			.sponsor-level-title {
 				color: $black;
 				text-transform: uppercase;
 				font-weight: bold;
-				@include font-size(1.4);
+				@include font-size(2);
+			}
 
+			.wcb_widget_sponsors {
 
+				.sponsor-level {
+					position: relative;
+					display: flex;
+					padding: 70px 0 40px;
+					flex-direction: row;
+					flex-wrap: wrap;
+					justify-content: center;
+					align-items: center;
+					align-content: stretch;
+					
+					.sponsor-level-title {
+						position: absolute;
+						top: 0;
+						display: block;
+						color: $main-color;
+						text-align: center;
+						@include font-size(1.8);
+						@include centered-x;
+					}
+
+					.sponsor-logo { 
+						display: inline-block !important;
+						padding: 20px;
+						flex-basis: 25%;
+						align-self: center;
+
+						img {
+							position: relative;
+							max-height: 120px;
+							@include centered-x;
+						}
+					}
+
+					&.platinium .sponsor-logo { flex-basis: 50%;
+
+						img { max-height: 200px; }
+					}
+
+					&.gold .sponsor-logo { flex-basis: 33%;
+
+						img { max-height: 150px; }
+					}
+
+					&:before, 
+					&:after { @include clearfix; }
+
+					&:after { @include clearfix-after; }
+				}
 			}
 		}
 	}
 }
 
 @media only screen and (max-width: $breakpoint) {
+	
+	.site-footer {
+		position: relative;
+		display:  block;
+		width: 100%;
+		background-color: $white;
+
+		#footer-widgets {
+			display: block;
+
+			.footer-widgets-block {
+
+				.widget { padding: 0 20px; }
+
+				.wcb_widget_sponsors {
+
+					.sponsor-level {
+						display: block;
+					}
+				}
+			}
+		}
+	}
 	
 }
