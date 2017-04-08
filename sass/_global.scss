@@ -39,6 +39,7 @@ a {
 	&:active {
 		text-decoration: none;
 		color: $link-text-hover;
+		text-shadow: none;
 
 		.thumb { outline: 1px solid $link-text-hover; }
 	}
