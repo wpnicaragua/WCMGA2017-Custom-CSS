@@ -90,9 +90,9 @@
 		ul {
 			margin: 0;
 			padding: 0;
-		    list-style-type: none;
+			list-style-type: none;
 
-		    > li {
+			> li {
 
 				a { 
 					text-decoration: none;
@@ -207,6 +207,73 @@
 	&:after { @include clearfix; }
 
 	&:after { @include clearfix-after; }
+}
+
+.wcpt-schedule {
+	border-collapse: collapse;
+	margin: 0 0 1.5em;
+	width: 100%;
+
+	tr { border-bottom: 1px solid $border-gray; }
+
+	td, 
+	th { padding: 10px !important; }
+
+	td { vertical-align: top; }
+
+	thead {
+
+		th { 
+			border-bottom: 2px solid $second-color;
+			text-align: left;
+		}
+	}
+
+	tbody {
+		tr:nth-child(2n+1) { background: rgba($light-second-color, 0.2) none repeat scroll 0 0; }
+	}
+	
+	.wcb-session-registration, 
+	.wcb-session-breakfast-social-registration {
+
+		.wcpt-session-title:after {
+			content: '\1F39F';
+			font-size: 22px;
+			margin-left: 5px;
+			vertical-align: middle;
+		}
+	}
+
+	.wcb-session-opening-remarks,
+	.wcb-session-end-of-day-remarks,
+	.wcb-session-end-of-day-remarks-2,
+	.wcb-session-end-of-day-remarks-3 {
+
+		.wcpt-session-title:after {
+		    content: '\1F4E3';
+		    font-size: 22px;
+		    margin-left: 5px;
+		    vertical-align: middle;
+		}
+	}
+
+	.wcpt-session-speakers a {
+	    font-style: italic;
+	    font-size: 14px;
+	    color: #2f3436 !important;
+	}
+
+	.wcb-session-lunch,
+	.wcb-session-lunch-2,
+	.wcb-session-lunch-3 {
+
+		.wcpt-session-title:after {
+		    content: '\1F354';
+		    font-size: 22px;
+		    margin-left: 5px;
+		    vertical-align: middle;
+		}
+	}
 }
 
 @media only screen and (max-width: $tablet-portrait) {
