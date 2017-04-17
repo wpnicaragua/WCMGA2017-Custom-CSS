@@ -192,23 +192,21 @@
 	}
 }
 
-.wcorg-organizers {
-
-	.avatar {
+.avatar {
 		width: auto;
 		float: left;
 		margin-right: 10px;
 		margin-bottom: 10px;
 		@extend .thumb;
-	}
-	
-	.wcorg-organizer-description {
-		
-		&:before, 
-		&:after { @include clearfix; }
+}
 
-		&:after { @include clearfix-after; }
-	}
+.wcorg-organizer-description,
+.wcorg-speaker-description {
+	
+	&:before, 
+	&:after { @include clearfix; }
+
+	&:after { @include clearfix-after; }
 }
 
 @media only screen and (max-width: $tablet-portrait) {
