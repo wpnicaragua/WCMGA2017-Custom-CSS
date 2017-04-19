@@ -46,8 +46,171 @@
 		@extend .container;
 
 		article { margin-bottom: 50px;
+
+			.entry-title {
+				padding-bottom: 25px;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				font-weight: 700;
+				color: $third-color;
+
+				&:after {
+					content: '';
+					position: absolute;
+					display: block;
+					margin-top: 15px;
+					width: 40px;
+					height: 1px;
+					background-color: $third-color;
+				}
+			}
 			
-			.entry-content { padding: 20px 0; }
+			.entry-content { padding: 20px 0; 
+
+				h1,
+				h2,
+				h3,
+				h4,
+				h5,
+				h6 { 
+					color: $main-color;
+					text-transform: uppercase;
+				}
+
+				table {
+					border-collapse: collapse;
+					margin: 0 0 1.5em;
+					width: 100%;
+
+					tr { border-bottom: 1px solid $border-gray; }
+
+					td, 
+					th { padding: 15px 10px !important; }
+
+					td { vertical-align: top; }
+
+					thead {
+
+						th { 
+							text-align: left;
+							font-weight: 700;
+							color: $black;
+							text-transform: uppercase;
+						}
+					}
+
+					tbody {
+						border-top: 2px solid $main-color !important;
+						tr:nth-child(2n+1) { background: rgba($light-main-color, 0.1) none repeat scroll 0 0 !important; }
+					}
+				}
+
+				.tix_tickets_table {
+					
+					.tix-right {
+
+						label { 
+							display: inline-block;
+							margin-bottom: 10px;
+						}
+					}
+				}
+
+				.wcpt-schedule {
+					width: calc(100% - 25px);
+    				margin-left: 25px;
+    				margin-bottom: 80px;
+
+					.wcpt-time { 
+						color: $black;
+						font-weight: 700;
+					}
+
+					.wcb-track-charlas:not([colspan='2']):before,
+					.wcb-track-talleres:not([colspan='2']):before {
+						content: 'Charla';
+						display: block;
+					    font-size: small;
+					    color: $main-color;
+					}
+
+					.wcb-track-charlas:not([colspan='2']):before { content: 'Charla'; }
+
+					.wcb-track-talleres:not([colspan='2']):before { content: 'Taller'; }
+					
+					.wcb-track-developers:after,
+					.wcb-track-marketing:after,
+					.wcb-track-negocios:after {
+					    display: block;
+					    font-size: small;
+					}
+
+					.wcb-track-developers:after { content: 'Track: Developers'; }
+
+					.wcb-track-marketing:after { content: 'Track: Diseño, Marketing & SEO'; }
+
+					.wcb-track-negocios:after { content: 'Track: Negocios'; }
+					
+					.wcb-session-registro {
+
+						.wcpt-session-title:after {
+							content: '\1F39F';
+							font-size: 22px;
+							margin-left: 5px;
+							vertical-align: middle;
+						}
+					}
+
+					.wcb-session-inauguracion-del-evento,
+					.wcb-session-rifas-y-premios-del-dia,
+					.wcb-session-rifas-y-premios-del-dia-2 {
+
+						.wcpt-session-title:after {
+						    content: '\1F4E3';
+						    font-size: 22px;
+						    margin-left: 5px;
+						    vertical-align: middle;
+						}
+					}
+
+					.wcpt-session-speakers {
+
+						a {
+						    font-style: italic;
+						    font-size: 14px;
+						    color: #2f3436 !important;
+						}
+
+						&:before, 
+						&:after { @include clearfix; }
+
+						&:after { @include clearfix-after; }
+					}
+
+					.wcb-session-almuerzo,
+					.wcb-session-almuerzo-2 {
+
+						.wcpt-session-title:after {
+						    content: '\1F354';
+						    font-size: 22px;
+						    margin-left: 5px;
+						    vertical-align: middle;
+						}
+					}
+
+					.wcb-session-panel-wordpress-deployment {
+
+						.wcpt-session-title:after {
+						    content: '\1F465';
+						    font-size: 22px;
+						    margin-left: 5px;
+						    vertical-align: middle;
+						    text-decoration: none;
+						    display: inline-block;
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -70,6 +233,7 @@
 				text-transform: uppercase;
 				letter-spacing: 2px;
 				font-weight: 700;
+				color: $third-color;
 				@include font-size(1.6);
 
 				&:after {
@@ -79,7 +243,7 @@
 					margin-top: 15px;
 					width: 40px;
 					height: 1px;
-					background-color: $white;
+					background-color: $third-color;
 				}
 			}
 		}
@@ -126,13 +290,37 @@
 
 .home {
 
-	#main {
-
-		background-color: $main-color;
+	#main { background-color: $main-color;
 
 		&:before,
-		&:after {
-			background-color: $main-color;
+		&:after { background-color: $main-color; }
+	}
+
+	#primary {
+
+		#content {
+
+			article {
+
+				.entry-title {
+					
+					&:after { display: none; }
+				}
+			}
+		}
+	}
+
+	#secondary {
+
+		#primary-sidebar {
+
+			.widget {
+
+				.widget-title { color: $white;
+
+					&:after { background-color: $white; }
+				}
+			}
 		}
 	}
 
@@ -147,22 +335,6 @@
 			&:active {color: $white;
 
 				.thumb { outline: 1px solid $white; }
-			}
-		}
-	}
-
-	#secondary {
-
-		#primary-sidebar {
-
-			.widget {
-
-				.widget-title {
-
-					&:after {
-						background-color: $default-text;
-					}
-				}
 			}
 		}
 	}
@@ -209,73 +381,6 @@
 	&:after { @include clearfix-after; }
 }
 
-.wcpt-schedule {
-	border-collapse: collapse;
-	margin: 0 0 1.5em;
-	width: 100%;
-
-	tr { border-bottom: 1px solid $border-gray; }
-
-	td, 
-	th { padding: 10px !important; }
-
-	td { vertical-align: top; }
-
-	thead {
-
-		th { 
-			border-bottom: 2px solid $second-color;
-			text-align: left;
-		}
-	}
-
-	tbody {
-		tr:nth-child(2n+1) { background: rgba($light-second-color, 0.2) none repeat scroll 0 0; }
-	}
-	
-	.wcb-session-registration, 
-	.wcb-session-breakfast-social-registration {
-
-		.wcpt-session-title:after {
-			content: '\1F39F';
-			font-size: 22px;
-			margin-left: 5px;
-			vertical-align: middle;
-		}
-	}
-
-	.wcb-session-opening-remarks,
-	.wcb-session-end-of-day-remarks,
-	.wcb-session-end-of-day-remarks-2,
-	.wcb-session-end-of-day-remarks-3 {
-
-		.wcpt-session-title:after {
-		    content: '\1F4E3';
-		    font-size: 22px;
-		    margin-left: 5px;
-		    vertical-align: middle;
-		}
-	}
-
-	.wcpt-session-speakers a {
-	    font-style: italic;
-	    font-size: 14px;
-	    color: #2f3436 !important;
-	}
-
-	.wcb-session-lunch,
-	.wcb-session-lunch-2,
-	.wcb-session-lunch-3 {
-
-		.wcpt-session-title:after {
-		    content: '\1F354';
-		    font-size: 22px;
-		    margin-left: 5px;
-		    vertical-align: middle;
-		}
-	}
-}
-
 @media only screen and (max-width: $tablet-portrait) {
 
 	#primary {
@@ -284,6 +389,17 @@
 			width: 100%;
 			padding: 0 20px; 
 			min-height: auto;
+
+			article {
+
+				.entry-content {
+
+					.wcpt-schedule {
+						width: 100%;
+	    				margin-left: 0;
+	    			}
+				}
+			}
 		}
 	}
 
