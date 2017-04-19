@@ -121,6 +121,12 @@
     				margin-left: 25px;
     				margin-bottom: 80px;
 
+    				thead {
+    					background-color: $main-color;
+
+    					th { color: $white; }
+    				}
+
 					.wcpt-time { 
 						color: $black;
 						font-weight: 700;
@@ -187,11 +193,29 @@
 						&:after { @include clearfix-after; }
 					}
 
+					.global-session {
+						color: $black;
+						font-weight: 700;
+						background-color: rgba($light-second-color, 0.1) !important;
+					}
+
 					.wcb-session-almuerzo,
 					.wcb-session-almuerzo-2 {
 
 						.wcpt-session-title:after {
 						    content: '\1F354';
+						    font-size: 22px;
+						    margin-left: 5px;
+						    vertical-align: middle;
+						}
+					}
+
+					.wcb-session-refrigerio,
+					.wcb-session-refrigerio-2 {
+						color: $black;
+
+						.wcpt-session-title:after {
+						    content: '\2615';
 						    font-size: 22px;
 						    margin-left: 5px;
 						    vertical-align: middle;
