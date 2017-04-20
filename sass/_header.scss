@@ -3,7 +3,7 @@
  *  @Section: Header
  *
 ***************************************************************************************************/
-$header-height: 43vw;
+$header-height: 25vw;
 $header-min-height: 600px;
 
 .site-header {
@@ -23,7 +23,7 @@ $header-min-height: 600px;
 		min-height: $header-min-height;
 		background-image: url("https://2017.managua.wordcamp.org/files/2017/04/banner-bkg.jpg");
 		background-repeat: no-repeat;
-		background-position: center center;
+		background-position: bottom center;
 		background-size: cover;
 		z-index: -1;
 	}
@@ -61,6 +61,18 @@ $header-min-height: 600px;
 		margin-top: 20px;
 		color: $black;
 		text-transform: uppercase;
+	}
+}
+
+.home {
+	$header-height: 43vw;
+
+	.site-header {
+		height: $header-height;
+
+		&:before {
+			height: $header-height;
+		}
 	}
 }
 
