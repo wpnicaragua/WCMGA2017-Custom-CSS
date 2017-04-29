@@ -8,9 +8,9 @@
 
 	input:not([type='button']):not([type='submit']),
 	textarea {
-		padding: 12px;
 		width: 100%;
 		height: $field-height;
+		padding: 5px 10px;
 		color: $main-color;
 		background: $white;
 		border: 1px solid $main-color;
@@ -19,12 +19,16 @@
 		@include transition;
 	}
 
-	textarea { min-height: 100px; }
+	textarea { 
+		min-height: 100px;
+		width: 100%;
+	}
 
 	select {
 		position: relative;
+		width: 100%;
 		height: $field-height;
-		padding: 12px;
+		padding: 5px 10px;
 		border: 1px solid $main-color;
 		color: $main-color;
 		background: $white;
@@ -33,9 +37,16 @@
 		@include transition;
 	}
 
+	select[name="tix_payment_method"] {
+		width: auto;
+	}
+
 	input[type="submit"],
 	input[type="button"] { @extend .btn; }
 
 	input[type="radio"],
-	input[type="checkbox"] { height: 20px !important; }
+	input[type="checkbox"] { 
+		width: auto !important;
+		height: 20px !important;
+	}
 }

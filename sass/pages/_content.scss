@@ -436,6 +436,82 @@
 	}
 }
 
+@media only screen and (max-width: $breakpoint),
+(min-device-width: $tablet-portrait) and (max-device-width: $tablet-landscape)  {
+
+	#tix {
+
+		.tix_tickets_table {
+
+			&, 
+			thead, 
+			tbody, 
+			th, 
+			td, 
+			tr {  display: block; }
+			
+			thead tr { 
+				position: absolute;
+				top: -9999px;
+				left: -9999px;
+			}
+			
+			tr { border: 1px solid #ccc; }
+			
+			td { 
+				border: none;
+				border-bottom: 1px solid #eee; 
+				position: relative;
+				padding-left: 50%; 
+			}
+			
+			td:before { 
+				position: relative;
+				top: 0;
+				left: 0;
+				display: block;
+				padding: 10px 0;
+				font-weight: 700;
+	    		color: $black;
+	    		text-transform: uppercase;
+			}
+			
+			td:nth-of-type(1):before { content: "Descripción"; }
+			td:nth-of-type(2):before { content: "Precio"; }
+			td:nth-of-type(3):before { content: "Quedan"; }
+			td:nth-of-type(4):before { content: "Cantidad"; }
+
+			.tix-row-coupon td:before { content: "Código de Cupón"; }
+			
+			.tix-row-total td:nth-of-type(1):before { display: none; }
+			.tix-row-total td:nth-of-type(2):before { content: "Total"; }
+
+			.tix-coupon-input { margin: 10px 0; }
+
+			&.tix-order-summary {
+
+				td:nth-of-type(1):before { content: "Descripción"; }
+				td:nth-of-type(2):before { content: "Por Ticket"; }
+				td:nth-of-type(3):before { content: "Cantidad"; }
+				td:nth-of-type(4):before { content: "Precio"; }
+			}
+
+			&.tix-attendee-form {
+
+				td:before { display: none; }
+
+				.tix-left,
+				.tix-right { width: 100%;}
+			}
+		}
+	}
+
+	.tix-order-summary {
+
+		.tix-column-description { width: 100%; }
+	}
+}
+
 @media only screen and (max-width: $desktop) {
 
 	#tix-attendees {
@@ -447,7 +523,7 @@
 	}
 }
 
-@media only screen and (max-width: $tablet-portrait) {
+// @media only screen and (max-width: $tablet-portrait) {
 
 	#primary {
 
@@ -479,7 +555,7 @@
 			padding: 0;
 		}
 	}
-}
+// }
 
 @media only screen and (max-width: $mobile) {
 
