@@ -404,6 +404,49 @@
 	&:after { @include clearfix-after; }
 }
 
+#tix-attendees {
+
+	.tix-attendee-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			padding: 0;
+			margin: 0 0 20px;
+			height: auto;
+			min-height: 200px;
+
+			.tix-field { 
+				margin-left: 0;
+				text-align: center;
+			}
+		}
+	}
+
+	.avatar {
+		position: relative;
+		display: inline-block;		
+		width: 96px;
+		height: 96px;
+		float: none !important;
+		margin-left: auto;
+		margin-right: auto;
+		@include centered-x;
+	}
+}
+
+@media only screen and (max-width: $desktop) {
+
+	#tix-attendees {
+
+		.tix-attendee-list {
+
+			li { width: 50%; }
+		}
+	}
+}
+
 @media only screen and (max-width: $tablet-portrait) {
 
 	#primary {
@@ -434,6 +477,17 @@
 
 		#primary-sidebar {
 			padding: 0;
+		}
+	}
+}
+
+@media only screen and (max-width: $mobile) {
+
+	#tix-attendees {
+
+		.tix-attendee-list {
+
+			li { width: 100%; }
 		}
 	}
 }

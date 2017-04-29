@@ -109,6 +109,18 @@ $header-min-height: 600px;
 
 		.registration-button { top: -80px; }
 	}
+
+	.home {
+		$header-height: 350px;
+
+		.site-header {
+			height: $header-height;
+
+			&:before {
+				height: $header-height;
+			}
+		}
+	}
 }
 
 @media

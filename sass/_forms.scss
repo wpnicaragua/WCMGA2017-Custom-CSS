@@ -9,6 +9,7 @@
 	input:not([type='button']):not([type='submit']),
 	textarea {
 		padding: 12px;
+		width: 100%;
 		height: $field-height;
 		color: $main-color;
 		background: $white;
@@ -18,7 +19,7 @@
 		@include transition;
 	}
 
-	textarea { max-height: 100px; }
+	textarea { min-height: 100px; }
 
 	select {
 		position: relative;
